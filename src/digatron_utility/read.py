@@ -37,7 +37,7 @@ from pydantic import BaseModel, field_validator
 from typing_extensions import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
 
-class DigatronDataFormat(Enum):
+class DigatronDataFormat(str, Enum):
     german_client_csv = "German client CSV"
 
 
@@ -48,12 +48,12 @@ class DigatronTabularData(TabularData):
         pass
 
 
-class Language(Enum):
+class Language(str, Enum):
     de = "Deutsch"
     en = "English"
 
 
-class HeaderStart(Enum):
+class HeaderStart(str, Enum):
     de = "Zeitstempel"
     en = "Timestamp"
 
@@ -73,7 +73,7 @@ class ReadDigatronCsvFileParameter(ReadFileParameter):
     exclude_from_params: List[str] = ["lang", "apply_to_cols"]
 
 
-class HeaderRegExs(Enum):
+class HeaderRegExs(str, Enum):
     german_client_csv = r"([^\t\n\d\:]+)\:*\t([^\t\n]*)[\n]{1}"
 
 
@@ -135,7 +135,7 @@ def time_array_to_seconds(
 
 
 class Configurations(Enum):
-    german_client = ReadDigatronCsvFileParameter(
+    german_client_csv = ReadDigatronCsvFileParameter(
         lang=Language.de,
         header=get_columns_and_units,
         encoding=Encoding.iso8859_1,
