@@ -13,7 +13,7 @@ Last modified: see git version control
 
 # import modules
 from datetime import datetime
-from enum import Enum
+from enum import Enum, StrEnum
 from pathlib import Path
 from warnings import warn
 
@@ -37,7 +37,7 @@ from pydantic import BaseModel, field_validator
 from typing_extensions import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
 
-class DigatronDataFormat(str, Enum):
+class DigatronDataFormat(StrEnum):
     german_client_csv = "German client CSV"
 
 
@@ -48,12 +48,12 @@ class DigatronTabularData(TabularData):
         pass
 
 
-class Language(str, Enum):
+class Language(StrEnum):
     de = "Deutsch"
     en = "English"
 
 
-class HeaderStart(str, Enum):
+class HeaderStart(StrEnum):
     de = "Zeitstempel"
     en = "Timestamp"
 
@@ -73,7 +73,7 @@ class ReadDigatronCsvFileParameter(ReadFileParameter):
     exclude_from_params: List[str] = ["lang", "apply_to_cols"]
 
 
-class HeaderRegExs(str, Enum):
+class HeaderRegExs(StrEnum):
     german_client_csv = r"([^\t\n\d\:]+)\:*\t([^\t\n]*)[\n]{1}"
 
 
@@ -194,7 +194,6 @@ class DigatronDataTxtFile(ReadTableResult):
         for key in config.exclude_from_params:
             if key in params:
                 del params[key]
-        del params["exclude_from_params"]
         # Read the data
         df = pd.read_csv(self.file_path, **params)
         # Apply functions to columns
