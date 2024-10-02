@@ -19,6 +19,27 @@
 A longer description of your project goes here...
 
 
+## Legal notice
+"Digatron" is a trademark of Digatron Power Electronics GmbH. This repository and its developers don't claim ownership
+of the trademark or intend to infringe copyright or proprietary rights.
+
+The software in this repository is not affiliated with [Digatron Power Electronics GmbH](https://www.digatron.com/) or
+any of its subsidiaries. The software is not endorsed by Digatron Power Electronics GmbH or any of its subsidiaries.
+The software is provided as is and without any warranty.
+
+## Disclaimer
+This is a work in progress. The code is not yet fully tested and may contain bugs. Use at your own risk.
+
+## Installation
+```cmd
+pip install digatron-utility
+```
+## Usage
+For examples on how to read Digatron data files, see the "examples" directory.
+
+## Contributing
+Contributions are welcome and manged with issue tracking and pull requests.
+
 <!-- pyscaffold-notes -->
 
 ## Note
