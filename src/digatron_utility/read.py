@@ -13,7 +13,14 @@ Last modified: see git version control
 
 # import modules
 from datetime import timedelta
-from enum import Enum, StrEnum
+from enum import Enum
+
+# Python version dependent import statements:
+try:
+    from enum import StrEnum
+except ImportError:
+    from strenum import StrEnum
+
 from pathlib import Path
 from warnings import warn
 
