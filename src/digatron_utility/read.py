@@ -22,6 +22,7 @@ except ImportError:
     from strenum import StrEnum
 
 from pathlib import Path
+from typing import Any
 from warnings import warn
 
 import pandas as pd
@@ -41,7 +42,7 @@ from batt_utility.helper_functions import (
     read_specific_line_from_file,
 )
 from pydantic import BaseModel, field_validator
-from typing_extensions import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
+from typing_extensions import Callable, Dict, List, Literal, Optional, Tuple, Union
 
 
 class DigatronDataFormat(StrEnum):
