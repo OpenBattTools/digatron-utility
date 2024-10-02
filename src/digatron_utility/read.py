@@ -12,7 +12,7 @@ Last modified: see git version control
 """
 
 # import modules
-from datetime import datetime
+from datetime import timedelta
 from enum import Enum, StrEnum
 from pathlib import Path
 from warnings import warn
@@ -114,7 +114,9 @@ def get_columns_and_units(
     return HeaderInfo(header=header, columns=columns, units=units_dict)
 
 
-def time_to_seconds(time_obj: Union[str, datetime], time_format: str = None):
+def time_to_seconds(time_obj: Union[str, timedelta], time_format: str = None):
+    """Convert a time object to seconds. This function is specific to the non-standard
+    time format used in the Digatron data files."""
     time_str = str(time_obj)
     parts = time_str.split(":")
     hours = int(parts[0])
