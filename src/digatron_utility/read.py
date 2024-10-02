@@ -25,12 +25,7 @@ from pathlib import Path
 from warnings import warn
 
 import pandas as pd
-from maccor_utility.helperfunctions import (
-    apply_regex_return_match_groups,
-    read_first_x_lines,
-    read_specific_line_from_file,
-)
-from maccor_utility.lookup import (
+from batt_utility.data_models import (
     DataFormat,
     DecimalSeparator,
     Encoding,
@@ -39,6 +34,11 @@ from maccor_utility.lookup import (
     Separator,
     TabularData,
     ThousandsSeparator,
+)
+from batt_utility.helper_functions import (
+    apply_regex_return_match_groups,
+    read_first_x_lines,
+    read_specific_line_from_file,
 )
 from pydantic import BaseModel, field_validator
 from typing_extensions import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
